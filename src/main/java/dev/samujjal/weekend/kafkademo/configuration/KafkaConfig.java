@@ -15,7 +15,7 @@ import java.util.Properties;
 public class KafkaConfig {
 
     @Bean
-    public KafkaProducer<String, String> getKafkaProducer(){
+    public KafkaProducer<String, String> getKafkaProducer() {
         Properties properties = new Properties();
         properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         properties.put(ProducerConfig.ACKS_CONFIG, "1");
@@ -25,7 +25,7 @@ public class KafkaConfig {
     }
 
     @Bean
-    public KafkaConsumer<String, String> getKafkaConsumer(){
+    public KafkaConsumer<String, String> getKafkaConsumer() {
         Properties properties = new Properties();
         properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);

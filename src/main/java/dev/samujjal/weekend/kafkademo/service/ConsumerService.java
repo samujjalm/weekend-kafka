@@ -1,5 +1,7 @@
 package dev.samujjal.weekend.kafkademo.service;
 
+import java.util.Map;
+
 public interface ConsumerService {
-    void readMessages(String topicName);
+    Map<String, String> readMessages(String topicName);
 }

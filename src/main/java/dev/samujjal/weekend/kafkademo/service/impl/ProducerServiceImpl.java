@@ -15,9 +15,7 @@ public class ProducerServiceImpl implements ProducerService {
     private KafkaProducer<String, String> kafkaProducer;
 
     @Override
-    public void writeMessageWithKey(String topic, String key, String message){
-        this.kafkaProducer.send(new ProducerRecord<>("topic-new-york", key, message), (recordMetadata, e) -> {
-            log.info("Message written to {} at {} has offset {}", recordMetadata.topic(), recordMetadata.timestamp(), recordMetadata.offset());
-        });
+    public void writeMessageWithKey(String topic, String key, String message) {
+        this.kafkaProducer.send(new ProducerRecord<>("topic-new-york", key, message), (recordMetadata, e) -> log.info("Message written to {} at {} has offset {}", recordMetadata.topic(), recordMetadata.timestamp(), recordMetadata.offset()));
     }
 }
