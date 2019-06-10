@@ -7,6 +7,7 @@ import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.springframework.stereotype.Service;
 
+import java.awt.event.KeyAdapter;
 import java.time.Duration;
 import java.util.*;
 
@@ -44,6 +45,7 @@ public class ConsumerServiceImpl implements ConsumerService {
         }
 
         kafkaConsumer.unsubscribe();
+        kafkaConsumer.close();
 
         return messagesRead;
     }
